@@ -1,0 +1,107 @@
+.city-map-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.city-map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.05));
+  pointer-events: none; /* Map image itself isn't clickable, hotspots are */
+  /* Softly dissolve the outer boundaries of the map so it merges into the page background */
+  -webkit-mask-image: radial-gradient(ellipse at center, black 58%, rgba(0,0,0,0.75) 72%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, black 58%, rgba(0,0,0,0.75) 72%, transparent 100%);
+}
+
+.map-hotspot {
+  position: absolute;
+  display: block;
+  z-index: 10;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  /* Make the bounding box visible only on hover/focus */
+  border: 2px solid transparent;
+}
+
+.map-hotspot:hover,
+.map-hotspot:focus-visible {
+  border-color: rgba(94, 170, 168, 0.4); /* Muted Teal Soft Outline */
+  background-color: rgba(94, 170, 168, 0.05); /* Slight fill to indicate hit area */
+  outline: none;
+}
+
+.map-hotspot:focus-visible {
+  border-color: var(--color-primary); /* Stronger accessible focus */
+  box-shadow: 0 0 0 3px rgba(31, 111, 104, 0.2);
+}
+
+.hotspot-label {
+  position: absolute;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-primary); /* Warm Ivory */
+  border: 1px solid var(--color-secondary); /* Muted Teal */
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  opacity: 0.85;
+  transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+  pointer-events: none; /* Clicking the label clicks the hotspot */
+  white-space: nowrap;
+}
+
+.map-hotspot:hover .hotspot-label,
+.map-hotspot:focus-visible .hotspot-label {
+  opacity: 1;
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary); /* Deep Teal */
+  /* Smooth, perfectly stable lift. No shaking or bounding. */
+  transform: translate(-50%, -6px);
+}
+
+.label-creative {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--color-primary); /* Deep Teal */
+  text-align: center;
+}
+
+.label-section {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-main); /* Charcoal */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.1rem;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .city-map-container {
+    aspect-ratio: 4 / 3;
+    min-height: 400px;
+  }
+  
+  .label-creative {
+    font-size: 0.8rem;
+  }
+  
+  .label-section {
+    font-size: 0.65rem;
+  }
+  
+  .hotspot-label {
+    padding: 0.4rem 0.6rem;
+  }
+}

@@ -1,0 +1,133 @@
+.resume-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  background-color: white;
+  padding: 4rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-building-gray);
+}
+
+.resume-content {
+  flex: 1;
+}
+
+.resume-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.archive-document {
+  flex: 1;
+  max-width: 380px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.archive-tab {
+  position: absolute;
+  top: -15px;
+  right: 30px;
+  background-color: var(--color-accent-soft);
+  color: var(--color-text-main);
+  padding: 0.2rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 4px 4px 0 0;
+  z-index: 0;
+  border: 1px solid var(--color-building-gray);
+  border-bottom: none;
+}
+
+.resume-preview-card {
+  background-color: #FAFAFA;
+  border: 1px solid var(--color-building-gray);
+  border-radius: 2px;
+  padding: 2.5rem;
+  box-shadow: 
+    5px 5px 15px rgba(0,0,0,0.05),
+    inset 0 0 40px rgba(0,0,0,0.02);
+  transform: rotateY(-5deg) rotateX(2deg);
+  transition: transform var(--transition-normal);
+  position: relative;
+  z-index: 1;
+}
+
+.archive-document:hover .resume-preview-card {
+  transform: rotateY(0deg) rotateX(0deg) translateY(-5px);
+  box-shadow: 
+    0 10px 25px rgba(0,0,0,0.08),
+    inset 0 0 40px rgba(0,0,0,0.02);
+}
+
+.resume-header {
+  border-bottom: 2px solid var(--color-text-main);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.resume-header h3 {
+  color: var(--color-text-main);
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+  font-family: serif;
+}
+
+.resume-header p {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.resume-focus {
+  color: var(--color-primary) !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.5rem;
+}
+
+.resume-line {
+  height: 6px;
+  background-color: var(--color-building-gray);
+  border-radius: 3px;
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+.resume-line.short {
+  width: 65%;
+}
+
+@media (max-width: 960px) {
+  .resume-container {
+    flex-direction: column;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  
+  .resume-actions {
+    justify-content: center;
+  }
+  
+  .archive-document {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .resume-preview-card {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+}
+
+.bg-archive-lines {
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 19px,
+    rgba(31, 111, 104, 0.08) 20px
+  );
+}

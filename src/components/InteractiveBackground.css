@@ -1,0 +1,96 @@
+.interactive-canvas-wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.interactive-bg-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.interactive-glows {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  transform: translate3d(var(--parallax-x, 0px), var(--parallax-y, 0px), 0);
+  transition: transform 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
+  will-change: transform;
+}
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  will-change: transform;
+  pointer-events: none;
+  /* Bind to the JS variables */
+  transform: translate3d(
+    calc(var(--mouse-x, 50vw) - 50%),
+    calc(var(--mouse-y, 50vh) - 50%),
+    0
+  );
+  transition: transform 0.6s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+/* Muted Teal Orb */
+.glow-teal {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(94, 170, 168, 0.12) 0%, transparent 70%);
+}
+
+/* Cherry Blush Orb - Slightly offset from cursor */
+.glow-blush {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(242, 199, 199, 0.15) 0%, transparent 70%);
+  margin-top: -150px;
+  margin-left: 150px;
+  transition-delay: 0.05s;
+}
+
+/* Pale Green Orb - Opposite offset */
+.glow-green {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(213, 243, 216, 0.1) 0%, transparent 70%);
+  margin-top: 100px;
+  margin-left: -200px;
+  transition-delay: 0.1s;
+}
+
+/* Static fallback for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .glow {
+    transition: none;
+    animation: none;
+    /* Static positions for the gradients to still provide warmth */
+    transform: none !important;
+  }
+  
+  .glow-teal {
+    top: 20%;
+    left: 20%;
+  }
+  
+  .glow-blush {
+    top: 60%;
+    right: 10%;
+    margin: 0;
+  }
+  
+  .glow-green {
+    bottom: 0;
+    left: 50%;
+    margin: 0;
+  }
+}
