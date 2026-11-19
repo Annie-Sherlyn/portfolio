@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container container">
-        <a href="#home" className="navbar-logo">
+        <a href="#home" className="navbar-logo" aria-label="Annie Sherlyn portfolio home">
           <svg className="logo-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
             <rect x="2" y="14" width="5" height="12" rx="1" fill="var(--color-primary)"/>
             <rect x="9" y="9" width="5" height="17" rx="1" fill="var(--color-primary-hover)"/>

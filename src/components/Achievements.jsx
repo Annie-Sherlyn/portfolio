@@ -5,36 +5,11 @@ const Achievements = () => {
   const sectionRef = useIntersectionObserver({ threshold: 0.1 });
 
   const achievements = [
-    {
-      title: 'Datathon 2K26 Winner',
-      details: 'Won Datathon 2K26 with ₹35,000 cash prize and 2 internship opportunities.',
-      category: 'Competition'
-    },
-    {
-      title: 'Smart India Hackathon',
-      details: 'Internal hackathon winner.',
-      category: 'Hackathon'
-    },
-    {
-      title: 'NPTEL C Programming',
-      details: 'Completed NPTEL certification in C Programming.',
-      category: 'Certification'
-    },
-    {
-      title: 'Cricket Analytics Workshop',
-      details: 'Completed a cricket analytics workshop focused on sports analytics and performance insights.',
-      category: 'Workshop'
-    },
-    {
-      title: 'NPTEL Introduction to Machine Learning',
-      details: 'Completed NPTEL Introduction to Machine Learning.',
-      category: 'Certification'
-    },
-    {
-      title: '50 Day LeetCode Badge',
-      details: 'Earned the 50 Day LeetCode Badge for consistent coding practice.',
-      category: 'Coding Practice'
-    }
+    { title: 'Datathon 2K26 — Winner', details: '1st place among 100+ teams. Won ₹35,000 and received 2 internship opportunities.', category: 'Competition · 2026' },
+    { title: 'KLA India Unhack — Runner-Up', details: 'Worked on real-world wafer-analysis problems with industry mentors.', category: 'Competition · 2026' },
+    { title: 'Hackinfinity ’26 — Runner-Up', details: 'Second Prize, Software Track. NutriSense; 120+ teams; ₹10,000 prize.', category: 'Hackathon · 2026', project: '#projects' },
+    { title: 'LeetCode', details: '150+ problems solved. Earned 50-Day and 100-Day Problem-Solving Badges.', category: 'Coding Practice' },
+    { title: 'Datalytics Innovation 2.0', details: 'Organized and conducted the October 2026 hackathon, coordinating activities and execution.', category: 'Leadership · October 2026' }
   ];
 
   return (
@@ -65,6 +40,7 @@ const Achievements = () => {
                 <span className="achievement-category">{item.category}</span>
                 <h4 className="achievement-title">{item.title}</h4>
                 <p className="achievement-details">{item.details}</p>
+                {item.project && <a className="achievement-link" href={item.project}>View associated project</a>}
               </div>
             </div>
           ))}

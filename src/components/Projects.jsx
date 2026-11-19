@@ -1,50 +1,66 @@
+import { useState } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import './Projects.css';
 
 const Projects = () => {
   const sectionRef = useIntersectionObserver({ threshold: 0.1 });
 
+  const [activeFilter, setActiveFilter] = useState('All');
   const projects = [
     {
-      title: 'Women Safety System',
-      description: 'The Women Safety System is a smart safety application designed to help women during emergencies by providing instant access to SOS alerts, live location sharing, and emergency contact notifications. The system enables users to quickly seek help and ensures that trusted contacts receive real-time updates about the user\'s location and safety status.',
-      features: [
-        'Emergency SOS alert system',
-        'Live location sharing',
-        'Emergency contact notification',
-        'Machine learning model for language/speech input processing',
-        'Text-to-speech integration',
-        'Speech recognition using Vosk and/or Whisper',
-        'Real-time voice interaction'
-      ],
-      tags: ['HTML', 'CSS', 'JavaScript', 'Python', 'Flask', 'TTS', 'Vosk', 'Whisper', 'ML'],
-      githubLink: '#',
-      caseStudyLink: '#'
+      title: 'SafeHer',
+      category: 'AI / Safety',
+      description: 'An AI-powered women’s safety application for intelligent journey monitoring, route anomaly detection and emergency response workflows.',
+      problem: 'Improve timely support and safety awareness during personal travel.',
+      solution: 'Connect location monitoring and machine-learning anomaly signals with structured SOS workflows.',
+      features: ['Journey monitoring', 'Route anomaly detection', 'Location tracking', 'SOS alerts', 'Trusted contacts'],
+      tags: ['Python', 'FastAPI', 'Flask', 'Scikit-learn', 'Pandas', 'PostgreSQL'],
+      githubLink: null
     },
     {
-      title: 'AI-Powered Market Intelligence Dashboard',
-      description: 'An end-to-end analytics platform that transforms Amazon product and keyword datasets into actionable business intelligence. It analyzes demand strength, revenue momentum, market concentration, pricing patterns, and whitespace gaps. It combines structured dataset analysis with AI-assisted insight generation to help sellers make smarter entry or growth decisions.',
-      features: [
-        'Interactive cards and visual charts',
-        'Evidence-based calculations & drill-down tables',
-        'Downloadable Markdown business reports',
-        'Python-based intelligence agents',
-        'Comprehensive Testing & Browser QA'
-      ],
-      tags: ['React', 'TypeScript', 'Vite', 'Python', 'FastAPI', 'Pandas', 'NumPy', 'PostgreSQL', 'DBeaver', 'Git', 'GitHub'],
-      githubLink: '#',
-      caseStudyLink: '#'
+      title: 'MarketNexus',
+      category: 'AI / Business Intelligence',
+      description: 'AI-powered competitive intelligence that analyzes reviews and competitor information to generate actionable business insights.',
+      problem: 'Turn fragmented product and market evidence into clear decisions.',
+      solution: 'Combine NLP, retrieval and analytical workflows with an interactive intelligence dashboard.',
+      features: ['Sentiment analysis', 'Aspect-based NLP', 'RAG retrieval', 'Competitor analysis', 'Market simulations'],
+      tags: ['Python', 'NLP', 'DistilBERT', 'LLMs', 'RAG', 'Vector Search'],
+      githubLink: null
     },
     {
-      title: 'Coming Soon / Future Project',
-      description: 'A future space for another data science, AI, analytics, or strategy-focused project. This section remains cleanly integrated into the portfolio architecture, ready to host the next big data solution.',
-      features: [],
-      tags: [],
-      githubLink: null,
-      caseStudyLink: null,
-      isPlaceholder: true
+      title: 'SENTRA',
+      category: 'Full Stack / FinTech',
+      description: 'A completed e-commerce platform built for the Razorpay Buildathon with connected seller and buyer workflows.',
+      problem: 'Unify product management, buyer requests and payment operations.',
+      solution: 'Create an end-to-end commerce dashboard for catalog, inventory, orders and transaction tracking.',
+      features: ['Seller dashboard', 'Product variants', 'Inventory management', 'Buyer requests', 'Razorpay integration'],
+      tags: ['Full Stack', 'Razorpay', 'E-Commerce', 'Payments'],
+      githubLink: null
+    },
+    {
+      title: 'NutriSense',
+      category: 'AI / HealthTech',
+      description: 'A food intelligence application for exploring nutritional information through food analysis and user-facing workflows.',
+      problem: 'Make food and nutrient information easier to understand and explore.',
+      solution: 'Use structured food analysis workflows and OCR-based menu information in an accessible application.',
+      features: ['Food analysis', 'Nutritional insights', 'Menu OCR', 'Budget recommendations'],
+      tags: ['TypeScript', 'Python', 'OCR', 'Food Intelligence'],
+      githubLink: 'https://github.com/Annie-Sherlyn/NutriSense',
+      liveLink: 'https://timely-froyo-9a6b6f.netlify.app'
+    },
+    {
+      title: 'Cricket Analysis',
+      category: 'Data Analytics',
+      description: 'A cricket analytics project focused on extracting meaningful patterns and insights from cricket-related data.',
+      problem: 'Convert cricket data into interpretable performance insights.',
+      solution: 'Apply analytical methods and visualizations to explore statistics and trends.',
+      features: ['Data exploration', 'Statistical analysis', 'Sports visualizations', 'Key findings'],
+      tags: ['Python', 'Pandas', 'Data Visualization', 'Sports Analytics'],
+      githubLink: null
     }
   ];
+  const filters = ['All', 'AI', 'Full Stack', 'Data Analytics'];
+  const filteredProjects = activeFilter === 'All' ? projects : projects.filter(project => project.category.includes(activeFilter));
 
   return (
     <section className="section bg-light" id="projects" ref={sectionRef}>
@@ -58,8 +74,20 @@ const Projects = () => {
           </p>
         </div>
 
+        <div className="projects-filters" aria-label="Filter projects">
+          {filters.map(filter => (
+            <button
+              key={filter}
+              className={`filter-pill ${activeFilter === filter ? 'active' : ''}`}
+              onClick={() => setActiveFilter(filter)}
+            >
+              {filter}
+            </button>
+          ))}
+        </div>
+
         <div className="projects-grid">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <div key={index} className="project-card">
               <div className="project-preview-window">
                 <div className="project-preview-header">
@@ -68,19 +96,21 @@ const Projects = () => {
                   <span className="dot dot-green"></span>
                 </div>
                 <div className="project-preview-body">
+                  <span className="project-index">0{index + 1}</span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="project-preview-icon">
-                    {project.isPlaceholder ? (
-                      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                    ) : (
-                      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                    )}
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
                   </svg>
                 </div>
               </div>
               
               <div className="project-content">
+                <span className="project-category">{project.category}</span>
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-desc">{project.description}</p>
+                <div className="project-proof">
+                  <div><strong>Problem</strong><span>{project.problem}</span></div>
+                  <div><strong>Solution</strong><span>{project.solution}</span></div>
+                </div>
                 
                 {project.features && project.features.length > 0 && (
                   <div className="project-features">
@@ -100,13 +130,11 @@ const Projects = () => {
                 </div>
                 
                 <div className="project-links">
-                  {project.isPlaceholder ? (
-                    <button className="btn-secondary" disabled>Coming Soon</button>
-                  ) : (
-                    <>
-                      <a href={project.githubLink} className="btn-secondary btn-sm">GitHub</a>
-                      <a href={project.caseStudyLink} className="btn-primary btn-sm">View Case Study</a>
-                    </>
+                  {project.githubLink && (
+                    <a href={project.githubLink} className="btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  )}
+                  {project.liveLink && (
+                    <a href={project.liveLink} className="btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Live Demo</a>
                   )}
                 </div>
               </div>

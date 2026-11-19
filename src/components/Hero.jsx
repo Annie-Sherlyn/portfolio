@@ -13,11 +13,8 @@ const Hero = () => {
         <div className="hero-grid">
           {/* Left Column: Content */}
           <div className="hero-content reveal-up">
-            <div className="hero-profile-frame">
-              {/* TODO: Replace with Annie's actual profile photo */}
-              <div className="profile-placeholder">
-                <span className="profile-initials">AS</span>
-              </div>
+            <div className="hero-profile-frame" aria-label="Annie Sherlyn R">
+              <div className="profile-placeholder"><span className="profile-initials">AS</span></div>
             </div>
 
             <div className="hero-tagline">
@@ -26,12 +23,12 @@ const Hero = () => {
             </div>
 
             <h1 className="hero-title">
-              Welcome to<br/>
-              <span className="hero-title-accent">Annie’s Data City</span>
+              Annie Sherlyn R<br/>
+              <span className="hero-title-accent">AI &amp; Data Science Developer</span>
             </h1>
 
             <p className="hero-subtitle">
-              Exploring data science, AI, analytics, leadership, and innovation through meaningful projects and real-world learning.
+              An Integrated M.Sc. Data Science student at Coimbatore Institute of Technology, passionate about building intelligent applications, AI-powered systems and data-driven solutions. I enjoy transforming complex problems into practical software solutions through artificial intelligence, machine learning, analytics and full-stack development.
             </p>
 
             <div className="hero-instruction">
@@ -45,8 +42,11 @@ const Hero = () => {
             </div>
 
             <div className="hero-buttons">
-              <a href="#projects" className="btn-primary">Explore Data Lab</a>
-              <a href="#resume" className="btn-secondary">View Archive</a>
+              <a href="#projects" className="btn-primary">View Projects</a>
+              <a href="#journey" className="btn-secondary">Explore My Journey</a>
+              <a href="mailto:anniesherlyn2006@gmail.com?subject=Resume%20request" className="btn-secondary">Download Resume</a>
+              <a href="https://github.com/Annie-Sherlyn" className="btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/annie-sherlyn-cit/" className="btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
           </div>
 

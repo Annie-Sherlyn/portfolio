@@ -1,4 +1,3 @@
-import React from 'react';
 import './DataCityIllustration.css';
 
 const mapSections = [

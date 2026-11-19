@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './CustomCursor.css';
 
 const CustomCursor = () => {
@@ -9,21 +9,22 @@ const CustomCursor = () => {
   const smoothedMouse = useRef({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [isTouchDevice] = useState(() => (
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  ));
 
   useEffect(() => {
     // Check for touch device or reduced motion
     const touch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
-    if (touch || prefersReducedMotion) {
-      setIsTouchDevice(true);
-      return;
-    }
+    if (touch || prefersReducedMotion) return;
 
     const onMouseMove = (e) => {
       mouse.current = { x: e.clientX, y: e.clientY };
-      if (!isVisible) setIsVisible(true);
+      setIsVisible(true);
     };
 
     const onMouseLeave = () => setIsVisible(false);
@@ -76,7 +77,7 @@ const CustomCursor = () => {
       window.removeEventListener('mouseover', handleMouseOver);
       cancelAnimationFrame(requestRef.current);
     };
-  }, [isVisible]);
+  }, []);
 
   if (isTouchDevice) return null;
 

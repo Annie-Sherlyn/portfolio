@@ -5,27 +5,11 @@ const Experience = () => {
   const sectionRef = useIntersectionObserver({ threshold: 0.1 });
 
   const experiences = [
-    {
-      title: 'Datalytics Secretary',
-      date: 'May 2026 – Present',
-      type: 'Leadership / Student Organization',
-      description: 'Serving as Datalytics Secretary, supporting club coordination, student engagement, event planning, communication, documentation, and data-focused community activities.',
-      tags: ['Leadership', 'Event Management', 'Communication', 'Documentation', 'Team Coordination']
-    },
-    {
-      title: 'Summer Intern — Profit Story AI',
-      date: 'May 2026 – Jun 2026',
-      type: 'Internship',
-      description: 'Completed a summer internship at Profit Story AI, gaining exposure to AI-based business solutions, analytics workflows, and practical technology applications.',
-      tags: ['Internship', 'AI', 'Analytics', 'Research', 'Business Solutions']
-    },
-    {
-      title: 'Intern — DotCollective / Yoko Styles',
-      date: 'Feb 2026 – Present',
-      type: 'Product-Based Startup Internship',
-      description: 'Working with DotCollective / Yoko Styles, a product-based startup, contributing to product-focused tasks, research, coordination, and practical startup learning.',
-      tags: ['Product Research', 'Startup', 'Coordination', 'Digital Strategy', 'Practical Learning']
-    }
+    { title: 'Secretary — Datalytics, CIT', date: 'May 2026 – Present', type: 'Leadership', description: 'Coordinating technical events and club activities, organizing technical sessions, facilitating student engagement, supporting innovation and hackathon initiatives, and coordinating operations and event execution.', tags: ['Event Coordination', 'Technical Activities', 'Student Engagement', 'Operations'] },
+    { title: 'Internship Coordinator — CIT', date: 'August 2026 – Present', type: 'Leadership · Prominent Role', description: 'Working with the Internship Cell, faculty and staff to coordinate internship-related activities and facilitate communication between students and organizations.', tags: ['Internship Coordination', 'Faculty & Staff', 'Communication', 'Student Support'] },
+    { title: 'Data Analyst / Full Stack Developer Intern', date: 'May 2026 – June 2026', type: 'ProfitStory.ai', description: 'Worked on competitive intelligence dashboards, product analytics, market intelligence and data-driven decision-support systems, including product and competitor analysis, data processing, pricing, profitability, dashboards, forecasting and risk assessment.', tags: ['Competitive Intelligence', 'Data Processing', 'Dashboards', 'Market Analysis'] },
+    { title: 'Product Intelligence Intern', date: 'March 2026 – April 2026', type: 'TheDot Collective Pvt. Ltd.', description: 'Worked on product research, market intelligence, competitor analysis and business analysis to identify market opportunities and generate actionable business insights.', tags: ['Product Research', 'Competitor Analysis', 'Market Intelligence', 'Business Analysis'] },
+    { title: 'Assistant School Pupil Leader', date: 'June 2021 – May 2022', type: 'St. Joseph’s Matriculation Higher Secondary School', description: 'Supported student leadership responsibilities, communication and coordination within the school community.', tags: ['Leadership', 'Communication', 'Student Coordination'] }
   ];
 
   return (

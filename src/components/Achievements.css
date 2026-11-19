@@ -83,3 +83,10 @@
   line-height: 1.6;
   margin: 0;
 }
+
+.achievement-link {
+  margin-top: .75rem;
+  color: var(--color-primary-dark);
+  font-size: .82rem;
+  font-weight: 700;
+}

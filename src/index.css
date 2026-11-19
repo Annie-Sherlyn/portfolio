@@ -1,27 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-  /* Enhanced Warm Professional Palette */
-  --color-primary: #1F6F68;       /* Deep Teal */
-  --color-primary-dark: #124C47;  /* Darker Teal for high contrast text */
-  --color-primary-hover: #175a54;
-  --color-secondary: #5EAAA8;     /* Muted Teal */
-  --color-mint: #D5F3D8;          /* Pale Green */
-  --color-blush: #F2C7C7;         /* Cherry Blush */
-  --color-pink: #FFB7C5;          /* Bright Pink (Accent only) */
-  --color-accent-gold: #C5A880;   /* Muted Gold */
+  --color-primary: #2979FF;
+  --color-primary-dark: #00D9FF;
+  --color-primary-hover: #635BFF;
+  --color-secondary: #00D9FF;
+  --color-mint: rgba(0, 217, 255, 0.12);
+  --color-blush: #635BFF;
+  --color-pink: #2979FF;
+  --color-accent-gold: #00D9FF;
   
-  --color-bg-primary: #FAFAF8;    /* Warm Ivory */
-  --color-bg-secondary: #F3F4F1;  /* Slightly darker warm ivory */
-  --color-bg-card: #FFFFFF;
-  --color-text-main: #222222;     /* Charcoal */
-  --color-text-muted: #555555;
-  --color-building-gray: #E8EAE6;
-  --color-shadow: rgba(31, 111, 104, 0.1);
+  --color-bg-primary: #080D18;
+  --color-bg-secondary: #101A2E;
+  --color-bg-card: rgba(16, 26, 46, 0.88);
+  --color-text-main: #F4F7FC;
+  --color-text-muted: #8796AA;
+  --color-building-gray: rgba(135, 150, 170, 0.22);
+  --color-shadow: rgba(41, 121, 255, 0.16);
 
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
   /* Layout & Geometry */
   --radius-sm: 6px;
@@ -49,7 +49,10 @@ html, body {
   padding: 0;
   width: 100%;
   overflow-x: hidden; /* Prevent any layout shifts */
-  background-color: var(--color-bg-primary);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(41, 121, 255, 0.08), transparent 28rem),
+    radial-gradient(circle at 82% 22%, rgba(0, 217, 255, 0.05), transparent 24rem),
+    var(--color-bg-primary);
   color: var(--color-text-main);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;

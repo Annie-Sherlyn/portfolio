@@ -6,65 +6,20 @@ const Skills = () => {
   const sectionRef = useIntersectionObserver({ threshold: 0.1 });
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const categories = [
-    'All',
-    'Programming',
-    'Data Science & Analytics',
-    'AI & NLP',
-    'Tools & Platforms',
-    'Web & Development',
-    'Soft Skills'
-  ];
+  const categories = ['All', 'Programming', 'AI & ML', 'Data Science', 'Backend', 'Databases', 'Visualization', 'Tools', 'Software Development'];
 
   const allSkills = [
-    // Programming
-    { name: 'Python', level: 'Intermediate', score: 4, category: 'Programming', badge: '2y' },
-    { name: 'SQL', level: 'Intermediate', score: 4, category: 'Programming' },
-    { name: 'MySQL', level: 'Intermediate', score: 4, category: 'Programming' },
-    { name: 'Pandas', level: 'Intermediate', score: 4, category: 'Programming' },
-    { name: 'NumPy', level: 'Intermediate', score: 3.5, category: 'Programming' },
-    { name: 'Java', level: 'Beginner', score: 2.5, category: 'Programming' },
-    { name: 'C', level: 'Beginner', score: 2.5, category: 'Programming' },
-    
-    // Data Science & Analytics
-    { name: 'Data Analytics', level: 'Intermediate', score: 4, category: 'Data Science & Analytics' },
-    { name: 'Data Cleaning', level: 'Intermediate', score: 4, category: 'Data Science & Analytics' },
-    { name: 'Business Intelligence', level: 'Beginner–Intermediate', score: 3.5, category: 'Data Science & Analytics' },
-    { name: 'Machine Learning', level: 'Beginner–Intermediate', score: 3, category: 'Data Science & Analytics' },
-    { name: 'Feature Engineering', level: 'Beginner–Intermediate', score: 3, category: 'Data Science & Analytics' },
-    { name: 'Model Evaluation', level: 'Beginner–Intermediate', score: 3, category: 'Data Science & Analytics' },
-    { name: 'Statistics', level: 'Beginner–Intermediate', score: 3, category: 'Data Science & Analytics' },
-    { name: 'Data Visualization', level: 'Intermediate', score: 4, category: 'Data Science & Analytics' },
-    
-    // AI & NLP
-    { name: 'NLP', level: 'Beginner', score: 2.5, category: 'AI & NLP' },
-    { name: 'Prompt Engineering', level: 'Intermediate', score: 4, category: 'AI & NLP' },
-    { name: 'Text Preprocessing', level: 'Beginner–Intermediate', score: 3, category: 'AI & NLP' },
-    { name: 'Sentiment Analysis', level: 'Beginner–Intermediate', score: 3, category: 'AI & NLP' },
-    
-    // Tools & Platforms
-    { name: 'VS Code', level: 'Intermediate', score: 4, category: 'Tools & Platforms' },
-    { name: 'Jupyter Notebook', level: 'Intermediate', score: 4, category: 'Tools & Platforms' },
-    { name: 'GitHub', level: 'Beginner–Intermediate', score: 3.5, category: 'Tools & Platforms' },
-    { name: 'Git', level: 'Beginner–Intermediate', score: 3, category: 'Tools & Platforms' },
-    { name: 'Excel', level: 'Intermediate', score: 4, category: 'Tools & Platforms' },
-    { name: 'Canva', level: 'Intermediate', score: 4, category: 'Tools & Platforms' },
-    { name: 'DBeaver', level: 'Beginner–Intermediate', score: 3, category: 'Tools & Platforms' },
-    
-    // Web & Development
-    { name: 'HTML', level: 'Beginner–Intermediate', score: 3.5, category: 'Web & Development' },
-    { name: 'CSS', level: 'Beginner–Intermediate', score: 3.5, category: 'Web & Development' },
-    { name: 'FastAPI', level: 'Beginner', score: 2.5, category: 'Web & Development' },
-    { name: 'React Basics', level: 'Beginner', score: 2.5, category: 'Web & Development' },
-    { name: 'TypeScript Basics', level: 'Beginner', score: 2, category: 'Web & Development' },
-    
-    // Soft Skills
-    { name: 'Leadership', level: 'Intermediate', score: 4, category: 'Soft Skills' },
-    { name: 'Communication', level: 'Intermediate', score: 4, category: 'Soft Skills' },
-    { name: 'Research', level: 'Intermediate', score: 4, category: 'Soft Skills' },
-    { name: 'Team Collaboration', level: 'Intermediate', score: 4, category: 'Soft Skills' },
-    { name: 'Event Management', level: 'Intermediate', score: 4, category: 'Soft Skills' },
-    { name: 'Documentation', level: 'Intermediate', score: 4, category: 'Soft Skills' }
+    { name: 'Python', category: 'Programming' }, { name: 'SQL', category: 'Programming' },
+    { name: 'Machine Learning', category: 'AI & ML' }, { name: 'Deep Learning', category: 'AI & ML' },
+    { name: 'NLP', category: 'AI & ML' }, { name: 'LLM Applications', category: 'AI & ML' },
+    { name: 'Scikit-learn', category: 'AI & ML' }, { name: 'DistilBERT', category: 'AI & ML' }, { name: 'RAG', category: 'AI & ML' },
+    { name: 'Pandas', category: 'Data Science' }, { name: 'NumPy', category: 'Data Science' },
+    { name: 'Data Cleaning', category: 'Data Science' }, { name: 'EDA', category: 'Data Science' },
+    { name: 'Feature Engineering', category: 'Data Science' }, { name: 'Data Visualization', category: 'Data Science' }, { name: 'Web Scraping', category: 'Data Science' },
+    { name: 'FastAPI', category: 'Backend' }, { name: 'Flask', category: 'Backend' }, { name: 'REST APIs', category: 'Backend' }, { name: 'Supabase', category: 'Backend' },
+    { name: 'PostgreSQL', category: 'Databases' }, { name: 'MySQL', category: 'Databases' }, { name: 'Excel', category: 'Visualization' },
+    { name: 'Git', category: 'Tools' }, { name: 'GitHub', category: 'Tools' }, { name: 'VS Code', category: 'Tools' }, { name: 'Jupyter Notebook', category: 'Tools' }, { name: 'DBeaver', category: 'Tools' },
+    { name: 'Data Structures and Algorithms', category: 'Software Development' }, { name: 'Object-Oriented Programming', category: 'Software Development' }
   ];
 
   const filteredSkills = activeCategory === 'All' 
@@ -103,17 +58,6 @@ const Skills = () => {
                 {skill.badge && <span className="skill-optional-badge">{skill.badge}</span>}
               </div>
               
-              <div className="skill-details">
-                <span className="skill-level">{skill.level}</span>
-                <span className="skill-score-text">{skill.score}/5</span>
-              </div>
-              
-              <div className="skill-progress-track">
-                <div 
-                  className="skill-progress-fill" 
-                  style={{ width: `${(skill.score / 5) * 100}%` }}
-                ></div>
-              </div>
             </div>
           ))}
         </div>

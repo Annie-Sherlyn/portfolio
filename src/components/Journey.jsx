@@ -5,81 +5,16 @@ const Journey = () => {
   const sectionRef = useIntersectionObserver({ threshold: 0.1 });
 
   const journeyData = [
-    {
-      date: 'July 2024',
-      title: 'Started Integrated M.Sc. Data Science at Coimbatore Institute of Technology',
-      details: 'Began academic journey in data science.'
-    },
-    {
-      date: '4th Semester',
-      title: 'CGPA',
-      details: 'Current CGPA: 8.6'
-    },
-    {
-      date: 'Dec 2024 – Jun 2025',
-      title: 'Social Media Manager / Editor — Pearly Touch',
-      details: 'Worked with Pearly Touch, a cosmetics brand, managing social media content and editing.'
-    },
-    {
-      date: 'Jan 2025 – Nov 2025',
-      title: 'Built foundation in Python, SQL, Statistics, and Analytics',
-      details: 'Strengthened core technical and analytical foundations.'
-    },
-    {
-      date: 'Mar 2025 – Apr 2026',
-      title: 'Datalytics Board Member — Event Management Team',
-      details: 'Contributed to event planning, coordination, and student community activities.'
-    },
-    {
-      date: 'Jun 2025',
-      title: 'Completed Cricket Analytics Workshop',
-      details: 'Explored sports analytics, performance metrics, and cricket data interpretation.'
-    },
-    {
-      date: 'Aug 2025 – Apr 2026',
-      title: 'Developed NAAC Digital Documentation System',
-      details: 'Developed a NAAC digital documentation system that centralized institutional data, automated SSR report generation, and provided secure role-based access for efficient accreditation management.'
-    },
-    {
-      date: 'Sept 2025 – Present',
-      title: 'Participated in 6+ Hackathons',
-      details: 'Participated in multiple hackathons focused on innovation, problem-solving, and rapid prototyping.'
-    },
-    {
-      date: 'Oct 2025',
-      title: 'Smart India Hackathon Internal Winner',
-      details: 'Won the internal Smart India Hackathon selection round.'
-    },
-    {
-      date: 'Jan 2026',
-      title: 'VIT Hackathon Finalist',
-      details: 'Selected as a finalist in the VIT hackathon.'
-    },
-    {
-      date: 'Feb 2026 – Present',
-      title: 'Internship — DotCollective / Yoko Styles',
-      details: 'Started internship at DotCollective / Yoko Styles, a product-based startup.'
-    },
-    {
-      date: 'Mar 2026',
-      title: 'Won Datathon 2K26',
-      details: 'Won Datathon 2K26 with ₹35,000 cash prize and 2 internship opportunities.'
-    },
-    {
-      date: 'May 2026 – Jun 2026',
-      title: 'Summer Internship — Profit Story AI',
-      details: 'Completed summer internship at Profit Story AI.'
-    },
-    {
-      date: '2026',
-      title: 'AI-Powered Market Intelligence Dashboard',
-      details: 'Built an end-to-end analytics platform that transforms Amazon product and keyword datasets into actionable business intelligence.'
-    },
-    {
-      date: 'May 2026 – Present',
-      title: 'Became Datalytics Secretary',
-      details: 'Took responsibility as Datalytics Secretary, supporting leadership, coordination, and student initiatives.'
-    }
+    { date: 'July 2024 – Present', title: 'Integrated M.Sc. Data Science', details: 'Studying at Coimbatore Institute of Technology.', category: 'Education' },
+    { date: 'March 2026 – April 2026', title: 'Product Intelligence Intern', details: 'TheDot Collective Pvt. Ltd.; product research, market intelligence, competitor analysis and business analysis.', category: 'Experience' },
+    { date: 'May 2026 – June 2026', title: 'Data Analyst / Full Stack Developer Intern', details: 'ProfitStory.ai; competitive intelligence, product analytics, data processing, market insights and dashboard development.', category: 'Experience' },
+    { date: 'May 2026 – Present', title: 'Secretary — Datalytics, CIT', details: 'Coordinating technical activities, events and student engagement.', category: 'Leadership' },
+    { date: 'August 2026', title: '150+ LeetCode Problems', details: 'LeetCode milestone reached; 100+ problems crossed by August 2026.', category: 'Achievement' },
+    { date: 'August 2026 – Present', title: 'Internship Coordinator — CIT', details: 'Working with the Internship Cell, faculty and staff to coordinate activities and communication between students and organizations.', category: 'Leadership' },
+    { date: '2026', title: 'Runner-Up — KLA India Unhack', details: 'Worked on real-world wafer-analysis problems in collaboration with industry mentors.', category: 'Competition' },
+    { date: '2026', title: 'Runner-Up / Second Prize — Hackinfinity ’26', details: 'Built NutriSense for the Software Track and secured the ₹10,000 prize.', category: 'Competition' },
+    { date: 'October 2026', title: 'Datalytics Innovation 2.0', details: 'Organized and conducted the club hackathon, covering planning, coordination, technical activities and event execution.', category: 'Leadership' },
+    { date: 'November 2026', title: 'AI & Data Science Developer', details: 'Building intelligent applications while serving as Secretary of Datalytics and Internship Coordinator at CIT.', category: 'Current' }
   ];
 
   return (

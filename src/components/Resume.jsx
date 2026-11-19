@@ -17,9 +17,7 @@ const Resume = () => {
             </p>
             
             <div className="resume-actions">
-              {/* TODO: Replace with actual resume PDF path before deployment. */}
-              <a href="/placeholder-resume.pdf" className="btn-primary" download>Download Resume</a>
-              <a href="/placeholder-resume.pdf" className="btn-secondary" target="_blank" rel="noopener noreferrer">View Resume</a>
+              <a href="mailto:anniesherlyn2006@gmail.com?subject=Resume%20request" className="btn-primary">Request Resume</a>
             </div>
           </div>
           

@@ -26,7 +26,7 @@ const About = () => {
             
             <div className="about-paragraphs">
               <p>
-                Hi, I’m <strong>Annie Sherlyn</strong>, an Integrated M.Sc. Data Science student at CIT. What draws me to data science is simple: curiosity. I’ve always enjoyed asking questions, exploring why things work the way they do, and looking beyond the obvious. For me, data is more than charts, dashboards, or algorithms—it’s a tool that helps make sense of the world around us.
+                Hi, I’m <strong>Annie Sherlyn R</strong>, an Integrated M.Sc. Data Science student at CIT and an AI &amp; Data Science Developer. I enjoy building intelligent applications and data-driven solutions across machine learning, analytics and full-stack development.
               </p>
               
               <p>

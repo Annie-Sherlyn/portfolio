@@ -1,5 +1,5 @@
 .navbar {
-  background-color: rgba(253, 251, 247, 0.95);
+  background: rgba(8, 13, 24, 0.88);
   height: 80px;
   display: flex;
   justify-content: center;
@@ -41,7 +41,7 @@
   align-items: center;
   list-style: none;
   text-align: center;
-  gap: 1.5rem;
+  gap: 1.1rem;
 }
 
 .nav-item {
@@ -105,7 +105,7 @@
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
-    background-color: var(--color-bg-primary);
+    background-color: rgba(8, 13, 24, 0.98);
     box-shadow: var(--shadow-md);
     padding: 1rem 0;
     gap: 0;

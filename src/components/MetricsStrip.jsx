@@ -3,8 +3,8 @@ import './MetricsStrip.css';
 const MetricsStrip = () => {
   const metrics = [
     {
-      title: '100+ LC Problems',
-      description: 'Consistent coding practice on LeetCode.',
+      title: '150+ LC Problems',
+      description: '150+ solved with 50-Day and 100-Day badges.',
       link: 'https://leetcode.com/u/Annie_sherlyn2006/',
       isExternal: true,
       icon: (
@@ -15,8 +15,8 @@ const MetricsStrip = () => {
       )
     },
     {
-      title: '3+ Projects',
-      description: 'Data science, AI, and analytics projects.',
+      title: '5 Projects',
+      description: 'AI, full-stack, business intelligence and analytics.',
       link: 'https://github.com/Annie-Sherlyn',
       isExternal: true,
       icon: (
