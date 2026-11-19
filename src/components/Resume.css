@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
-  background-color: white;
+  background: linear-gradient(145deg, rgba(16, 26, 46, 0.96), rgba(8, 13, 24, 0.98));
   padding: 4rem;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
@@ -17,6 +17,7 @@
 .resume-actions {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .archive-document {
@@ -30,7 +31,7 @@
   position: absolute;
   top: -15px;
   right: 30px;
-  background-color: var(--color-accent-soft);
+  background-color: var(--color-mint);
   color: var(--color-text-main);
   padding: 0.2rem 1rem;
   font-size: 0.75rem;
@@ -43,7 +44,7 @@
 }
 
 .resume-preview-card {
-  background-color: #FAFAFA;
+  background: linear-gradient(145deg, #101A2E, #080D18);
   border: 1px solid var(--color-building-gray);
   border-radius: 2px;
   padding: 2.5rem;

@@ -6,10 +6,9 @@ const Achievements = () => {
 
   const achievements = [
     { title: 'Datathon 2K26 — Winner', details: '1st place among 100+ teams. Won ₹35,000 and received 2 internship opportunities.', category: 'Competition · 2026' },
-    { title: 'KLA India Unhack — Runner-Up', details: 'Worked on real-world wafer-analysis problems with industry mentors.', category: 'Competition · 2026' },
-    { title: 'Hackinfinity ’26 — Runner-Up', details: 'Second Prize, Software Track. NutriSense; 120+ teams; ₹10,000 prize.', category: 'Hackathon · 2026', project: '#projects' },
+    { title: 'SIH Internal Hackathon — Winner', details: 'Selected among department teams and secured 1st place, qualifying for the Smart India Hackathon.', category: 'Competition' },
+    { title: 'InnoHack — VIT Top 25 Finalist', details: 'Shortlisted among the Top 25 teams for the final round.', category: 'Hackathon' },
     { title: 'LeetCode', details: '150+ problems solved. Earned 50-Day and 100-Day Problem-Solving Badges.', category: 'Coding Practice' },
-    { title: 'Datalytics Innovation 2.0', details: 'Organized and conducted the October 2026 hackathon, coordinating activities and execution.', category: 'Leadership · October 2026' }
   ];
 
   return (

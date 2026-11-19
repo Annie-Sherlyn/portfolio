@@ -6,6 +6,7 @@ const Projects = () => {
   const sectionRef = useIntersectionObserver({ threshold: 0.1 });
 
   const [activeFilter, setActiveFilter] = useState('All');
+  const [selectedProject, setSelectedProject] = useState(null);
   const projects = [
     {
       title: 'SafeHer',
@@ -90,16 +91,9 @@ const Projects = () => {
           {filteredProjects.map((project, index) => (
             <div key={index} className="project-card">
               <div className="project-preview-window">
-                <div className="project-preview-header">
-                  <span className="dot dot-red"></span>
-                  <span className="dot dot-yellow"></span>
-                  <span className="dot dot-green"></span>
-                </div>
                 <div className="project-preview-body">
                   <span className="project-index">0{index + 1}</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="project-preview-icon">
-                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                  </svg>
+                  <span className="project-code-mark">&lt;/&gt;</span>
                 </div>
               </div>
               
@@ -107,22 +101,6 @@ const Projects = () => {
                 <span className="project-category">{project.category}</span>
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-desc">{project.description}</p>
-                <div className="project-proof">
-                  <div><strong>Problem</strong><span>{project.problem}</span></div>
-                  <div><strong>Solution</strong><span>{project.solution}</span></div>
-                </div>
-                
-                {project.features && project.features.length > 0 && (
-                  <div className="project-features">
-                    <strong>Key Features:</strong>
-                    <ul>
-                      {project.features.map((feature, i) => (
-                        <li key={i}>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                
                 <div className="project-tags">
                   {project.tags.map(tag => (
                     <span key={tag} className="skill-badge">{tag}</span>
@@ -136,12 +114,30 @@ const Projects = () => {
                   {project.liveLink && (
                     <a href={project.liveLink} className="btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Live Demo</a>
                   )}
+                  <button className="project-details-button" type="button" onClick={() => setSelectedProject(project)}>View Details</button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+      {selectedProject && (
+        <div className="project-modal-backdrop" role="presentation" onMouseDown={() => setSelectedProject(null)}>
+          <div className="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title" onMouseDown={(event) => event.stopPropagation()}>
+            <button className="project-modal-close" type="button" aria-label="Close project details" onClick={() => setSelectedProject(null)}>×</button>
+            <span className="project-category">{selectedProject.category}</span>
+            <h3 id="project-modal-title">{selectedProject.title}</h3>
+            <p>{selectedProject.description}</p>
+            <div className="project-proof">
+              <div><strong>Problem</strong><span>{selectedProject.problem}</span></div>
+              <div><strong>Solution</strong><span>{selectedProject.solution}</span></div>
+            </div>
+            <div className="project-feature-list">
+              {selectedProject.features.map(feature => <span key={feature}>{feature}</span>)}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

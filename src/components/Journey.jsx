@@ -7,14 +7,11 @@ const Journey = () => {
   const journeyData = [
     { date: 'July 2024 – Present', title: 'Integrated M.Sc. Data Science', details: 'Studying at Coimbatore Institute of Technology.', category: 'Education' },
     { date: 'March 2026 – April 2026', title: 'Product Intelligence Intern', details: 'TheDot Collective Pvt. Ltd.; product research, market intelligence, competitor analysis and business analysis.', category: 'Experience' },
-    { date: 'May 2026 – June 2026', title: 'Data Analyst / Full Stack Developer Intern', details: 'ProfitStory.ai; competitive intelligence, product analytics, data processing, market insights and dashboard development.', category: 'Experience' },
+    { date: 'May 2026 – June 2026', title: 'Data Analyst / Full Stack Developer Intern', details: 'ProfitStory; competitive intelligence, product analytics, data processing, market insights and dashboard development.', category: 'Experience' },
     { date: 'May 2026 – Present', title: 'Secretary — Datalytics, CIT', details: 'Coordinating technical activities, events and student engagement.', category: 'Leadership' },
-    { date: 'August 2026', title: '150+ LeetCode Problems', details: 'LeetCode milestone reached; 100+ problems crossed by August 2026.', category: 'Achievement' },
-    { date: 'August 2026 – Present', title: 'Internship Coordinator — CIT', details: 'Working with the Internship Cell, faculty and staff to coordinate activities and communication between students and organizations.', category: 'Leadership' },
-    { date: '2026', title: 'Runner-Up — KLA India Unhack', details: 'Worked on real-world wafer-analysis problems in collaboration with industry mentors.', category: 'Competition' },
-    { date: '2026', title: 'Runner-Up / Second Prize — Hackinfinity ’26', details: 'Built NutriSense for the Software Track and secured the ₹10,000 prize.', category: 'Competition' },
-    { date: 'October 2026', title: 'Datalytics Innovation 2.0', details: 'Organized and conducted the club hackathon, covering planning, coordination, technical activities and event execution.', category: 'Leadership' },
-    { date: 'November 2026', title: 'AI & Data Science Developer', details: 'Building intelligent applications while serving as Secretary of Datalytics and Internship Coordinator at CIT.', category: 'Current' }
+    { date: 'July 2026 – Present', title: 'Internship Coordinator — CIT', details: 'Facilitating communication between students and organizations to support internship placement processes.', category: 'Leadership' },
+    { date: '2026', title: 'Datathon 2K26 Winner', details: 'Secured 1st place among 100+ teams and received a ₹35,000 prize and 2 internship opportunities.', category: 'Achievement' },
+    { date: '2026', title: 'LeetCode Milestone', details: 'Solved 150+ problems and earned 50-Day and 100-Day Problem-Solving Badges.', category: 'Achievement' }
   ];
 
   return (

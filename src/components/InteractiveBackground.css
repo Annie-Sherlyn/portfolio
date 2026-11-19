@@ -45,14 +45,14 @@
 .glow-teal {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(94, 170, 168, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(41, 121, 255, 0.16) 0%, transparent 70%);
 }
 
 /* Cherry Blush Orb - Slightly offset from cursor */
 .glow-blush {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(242, 199, 199, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 217, 255, 0.12) 0%, transparent 70%);
   margin-top: -150px;
   margin-left: 150px;
   transition-delay: 0.05s;
@@ -62,7 +62,7 @@
 .glow-green {
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, rgba(213, 243, 216, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(99, 91, 255, 0.10) 0%, transparent 70%);
   margin-top: 100px;
   margin-left: -200px;
   transition-delay: 0.1s;

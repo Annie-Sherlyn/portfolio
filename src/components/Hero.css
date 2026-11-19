@@ -5,6 +5,33 @@
   padding: 4rem 0 3rem;
   position: relative;
   z-index: 1;
+  isolation: isolate;
+}
+
+.home-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(8, 13, 24, 0.98) 0%, rgba(8, 13, 24, 0.82) 34%, rgba(8, 13, 24, 0.22) 70%, rgba(8, 13, 24, 0.08) 100%),
+    url('/assets/immersive-data-city.png') 58% 50% / cover no-repeat;
+  background-color: #080d18;
+  transform: translate3d(var(--city-x, 0), var(--city-y, 0), 0) scale(1.025);
+  transition: transform .18s linear;
+}
+
+.home-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(rgba(41, 121, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(41, 121, 255, 0.025) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(90deg, black 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .hero-grid {
@@ -121,16 +148,73 @@
 
 .hero-map-column {
   position: relative;
-  width: 120%; /* Allow the map to spread beautifully */
-  margin-left: -20%; /* Pull map further left behind the text for a strong blended composition */
-  height: auto;
-  min-height: 500px;
-  aspect-ratio: 1.45 / 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1; /* Map stays visually beneath the hero content */
+  width: 100%;
+  height: 620px;
+  z-index: 2;
 }
+
+.hero-city-nav {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.city-node {
+  position: absolute;
+  min-width: 150px;
+  padding: .65rem .9rem;
+  display: grid;
+  gap: .15rem;
+  text-align: center;
+  color: #F4F7FC;
+  background: rgba(8, 13, 24, 0.9);
+  border: 1px solid rgba(0, 217, 255, 0.72);
+  border-radius: 7px;
+  box-shadow: 0 0 18px rgba(41, 121, 255, 0.18), inset 0 0 18px rgba(41, 121, 255, 0.05);
+  backdrop-filter: blur(8px);
+  pointer-events: auto;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.city-node span {
+  color: #2979FF;
+  font: 700 .78rem var(--font-mono);
+}
+
+.city-node small {
+  color: #F4F7FC;
+  font: 700 .68rem var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.city-node:hover,
+.city-node:focus-visible {
+  transform: translateY(-5px);
+  border-color: #00D9FF;
+  box-shadow: 0 0 24px rgba(0, 217, 255, 0.28);
+  outline: none;
+}
+
+.node-skills { top: 27%; left: 7%; }
+.node-projects { top: 43%; left: 38%; }
+.node-leadership { top: 20%; left: -5%; }
+.node-achievements { top: 40%; right: 2%; }
+.node-journey { bottom: 12%; left: 28%; }
+
+@keyframes cityNodePulse {
+  0%, 100% { box-shadow: 0 0 18px rgba(41, 121, 255, 0.18), inset 0 0 18px rgba(41, 121, 255, 0.05); }
+  50% { box-shadow: 0 0 28px rgba(0, 217, 255, 0.26), inset 0 0 22px rgba(41, 121, 255, 0.08); }
+}
+
+.city-node {
+  animation: cityNodePulse 4s ease-in-out infinite;
+}
+
+.city-node:nth-child(2) { animation-delay: -.8s; }
+.city-node:nth-child(3) { animation-delay: -1.6s; }
+.city-node:nth-child(4) { animation-delay: -2.4s; }
+.city-node:nth-child(5) { animation-delay: -3.2s; }
 
 /* Responsive */
 @media (max-width: 1100px) {
@@ -143,6 +227,13 @@
 @media (max-width: 960px) {
   .home-hero {
     padding-top: 3rem;
+    background-color: #080d18;
+  }
+
+  .home-hero::before {
+    background:
+      linear-gradient(180deg, rgba(8, 13, 24, 0.96) 0%, rgba(8, 13, 24, 0.64) 52%, rgba(8, 13, 24, 0.92) 100%),
+      url('/assets/immersive-data-city.png') 62% 48% / cover no-repeat;
   }
   
   .hero-grid {
@@ -167,7 +258,8 @@
   }
 
   .hero-map-column {
-    min-height: 400px;
+    min-height: 420px;
+    height: 420px;
     width: 100%;
     margin-left: 0;
     max-width: 700px;
@@ -177,10 +269,47 @@
 
 @media (max-width: 500px) {
   .hero-map-column {
-    min-height: 300px;
+    min-height: 260px;
+    height: 260px;
   }
   
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+
+  .hero-profile-frame {
+    width: 76px;
+    height: 76px;
+  }
+
+  .hero-city-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .55rem;
+    align-content: center;
+  }
+
+  .city-node {
+    position: relative;
+    inset: auto;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .city-node span {
+    font-size: .68rem;
+  }
+
+  .node-journey {
+    grid-column: 1 / -1;
+  }
+
+  .hero-buttons {
+    width: 100%;
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-secondary {
+    width: 100%;
   }
 }

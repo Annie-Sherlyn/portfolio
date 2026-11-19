@@ -6,20 +6,57 @@ const Skills = () => {
   const sectionRef = useIntersectionObserver({ threshold: 0.1 });
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const categories = ['All', 'Programming', 'AI & ML', 'Data Science', 'Backend', 'Databases', 'Visualization', 'Tools', 'Software Development'];
+  const categories = [
+    'All',
+    'Programming',
+    'AI & Machine Learning',
+    'Generative AI & NLP',
+    'Data Science',
+    'Data Analytics',
+    'Backend',
+    'Databases',
+    'Visualization',
+    'Tools',
+    'Software Development'
+  ];
 
   const allSkills = [
-    { name: 'Python', category: 'Programming' }, { name: 'SQL', category: 'Programming' },
-    { name: 'Machine Learning', category: 'AI & ML' }, { name: 'Deep Learning', category: 'AI & ML' },
-    { name: 'NLP', category: 'AI & ML' }, { name: 'LLM Applications', category: 'AI & ML' },
-    { name: 'Scikit-learn', category: 'AI & ML' }, { name: 'DistilBERT', category: 'AI & ML' }, { name: 'RAG', category: 'AI & ML' },
-    { name: 'Pandas', category: 'Data Science' }, { name: 'NumPy', category: 'Data Science' },
-    { name: 'Data Cleaning', category: 'Data Science' }, { name: 'EDA', category: 'Data Science' },
-    { name: 'Feature Engineering', category: 'Data Science' }, { name: 'Data Visualization', category: 'Data Science' }, { name: 'Web Scraping', category: 'Data Science' },
-    { name: 'FastAPI', category: 'Backend' }, { name: 'Flask', category: 'Backend' }, { name: 'REST APIs', category: 'Backend' }, { name: 'Supabase', category: 'Backend' },
-    { name: 'PostgreSQL', category: 'Databases' }, { name: 'MySQL', category: 'Databases' }, { name: 'Excel', category: 'Visualization' },
-    { name: 'Git', category: 'Tools' }, { name: 'GitHub', category: 'Tools' }, { name: 'VS Code', category: 'Tools' }, { name: 'Jupyter Notebook', category: 'Tools' }, { name: 'DBeaver', category: 'Tools' },
-    { name: 'Data Structures and Algorithms', category: 'Software Development' }, { name: 'Object-Oriented Programming', category: 'Software Development' }
+    { name: 'Python', category: 'Programming' },
+    { name: 'SQL', category: 'Programming' },
+    { name: 'Machine Learning', category: 'AI & Machine Learning' },
+    { name: 'Deep Learning', category: 'AI & Machine Learning' },
+    { name: 'Scikit-learn', category: 'AI & Machine Learning' },
+    { name: 'DistilBERT', category: 'AI & Machine Learning' },
+    { name: 'NLP', category: 'Generative AI & NLP' },
+    { name: 'LLM Applications', category: 'Generative AI & NLP' },
+    { name: 'RAG', category: 'Generative AI & NLP' },
+    { name: 'Vector Search', category: 'Generative AI & NLP' },
+    { name: 'Pandas', category: 'Data Science' },
+    { name: 'NumPy', category: 'Data Science' },
+    { name: 'Data Cleaning', category: 'Data Science' },
+    { name: 'EDA', category: 'Data Science' },
+    { name: 'Feature Engineering', category: 'Data Science' },
+    { name: 'Web Scraping', category: 'Data Science' },
+    { name: 'Data Analytics', category: 'Data Analytics' },
+    { name: 'Data Visualization', category: 'Data Analytics' },
+    { name: 'Product Analytics', category: 'Data Analytics' },
+    { name: 'Competitor Analysis', category: 'Data Analytics' },
+    { name: 'Market Intelligence', category: 'Data Analytics' },
+    { name: 'Excel', category: 'Visualization' },
+    { name: 'FastAPI', category: 'Backend' },
+    { name: 'Flask', category: 'Backend' },
+    { name: 'REST APIs', category: 'Backend' },
+    { name: 'Supabase', category: 'Backend' },
+    { name: 'PostgreSQL', category: 'Databases' },
+    { name: 'MySQL', category: 'Databases' },
+    { name: 'Git', category: 'Tools' },
+    { name: 'GitHub', category: 'Tools' },
+    { name: 'VS Code', category: 'Tools' },
+    { name: 'Jupyter Notebook', category: 'Tools' },
+    { name: 'DBeaver', category: 'Tools' },
+    { name: 'Render', category: 'Tools' },
+    { name: 'Data Structures & Algorithms', category: 'Software Development' },
+    { name: 'Object-Oriented Programming', category: 'Software Development' }
   ];
 
   const filteredSkills = activeCategory === 'All' 

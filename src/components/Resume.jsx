@@ -17,7 +17,8 @@ const Resume = () => {
             </p>
             
             <div className="resume-actions">
-              <a href="mailto:anniesherlyn2006@gmail.com?subject=Resume%20request" className="btn-primary">Request Resume</a>
+              <a href="/resumes/Annie_Data.pdf" className="btn-primary" download>Download Data Resume</a>
+              <a href="/resumes/Annie_Software.pdf" className="btn-secondary" download>Download Software Resume</a>
             </div>
           </div>
           

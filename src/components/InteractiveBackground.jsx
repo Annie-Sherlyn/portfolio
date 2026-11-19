@@ -50,11 +50,10 @@ const InteractiveBackground = () => {
 
     // Palette Colors - Extremely subtle opacities for floating elements
     const palette = [
-      'rgba(94, 170, 168, 0.15)', // Muted Teal
-      'rgba(31, 111, 104, 0.15)', // Deep Teal
-      'rgba(242, 199, 199, 0.15)', // Cherry Blush
-      'rgba(213, 243, 216, 0.15)', // Pale Green
-      'rgba(255, 183, 197, 0.1)'   // Tiny Bright Pink
+      'rgba(41, 121, 255, 0.18)',
+      'rgba(0, 217, 255, 0.16)',
+      'rgba(99, 91, 255, 0.12)',
+      'rgba(244, 247, 252, 0.10)'
     ];
 
     // Increased floating geometries
@@ -93,7 +92,7 @@ const InteractiveBackground = () => {
         
         ctx.moveTo(point.x, point.y);
         ctx.arc(point.x, point.y, size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(94, 170, 168, ${opacity * 0.25})`; // Muted teal soft glow
+        ctx.fillStyle = `rgba(41, 121, 255, ${opacity * 0.28})`;
         ctx.fill();
       }
 
